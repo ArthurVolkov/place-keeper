@@ -10,3 +10,4 @@ function saveToStorage(key, value) {
     var json = JSON.stringify(value);
     localStorage.setItem(key, json);    
 }
+

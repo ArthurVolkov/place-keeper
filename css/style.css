@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+.map{
+    width: 60vw;
+    height: 75vh;
+}
+
+.places-container {
+    height: 75vh;
+    overflow: auto;
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    top: 5vh;
+    left: 10%;
+    width: 80vw;
+    height: 70vh;
+    background: linear-gradient(to right, #a7e5eb 0%, #a2eef5 20%, #f3f08c 100%);    
+    border-radius: 5px;
+    font-size: large;
+    padding: 5px;
+}
+
+.hidden {
+    top: -100vh;
+    opacity: 0;
+}

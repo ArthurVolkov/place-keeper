@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body onload="initMap(29.549876, 34.953250)">
     <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Navigation</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -32,12 +32,46 @@
         </div>
     </nav>
 
-    <header class="p-5">
+    <header class="p-1">
         <h1 class="text-center mt-5 text-primary">Map</h1>
     </header>
 
 
+    <main class="main-container d-flex justify-content-around">
+        <section id="map" class="map"></section>
+        <section class="places-container d-flex flex-column bg-primary">
+            <button onclick="getPosition()" class="btn btn-primary">🌐</button>
+            <article class="table-container">
+                <table class="table table-bordered table-dark text-center">
+                    <thead class="thead-dark">
+                        <tr class="t-header">
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="places-to-render bg-primary">
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
 
+    <section class="modal">
+        <div class="input">
+            <form class="m-4 mt-1" onsubmit="onSetPlace(event)">
+                <div class="input-email form-group">
+                    <label for="place-input">Enter the place name</label>
+                    <input type="text" class="form-control" name="new-place" placeholder="Place name" required>
+                </div>
+
+                <div class="btn-submit form-group">
+                    <button type="submit" class="btn btn-primary mb-2" name="submit">Confirm</button>
+                    <button onclick="onCancel(event)" type="cancel" class="btn btn-danger mb-2" name="cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
     <!-- JQuery, Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -52,6 +86,10 @@
     <script src="js/user-pref-service.js"></script>
     <script src="js/place-servise.js"></script>
     <script src="js/main.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGuxwq8wZl4gxL2ERwdbaBPAb6QQl8z94&callback=mapReady">
+        </script>
 </body>
 
 </html>

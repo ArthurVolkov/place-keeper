@@ -6,3 +6,13 @@ function getRandomIntInclusive(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
+
+
+function makeId(length = 6) {
+    var id = '';
+    var possible = '0123456789';
+    for (var i = 0; i < length; i++) {
+        id += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return id;
+}
