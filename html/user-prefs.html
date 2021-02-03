@@ -32,22 +32,41 @@
         </div>
     </nav>
 
-    <header class="p-5">
+    <header class="pt-5">
         <h1 class="text-center mt-5 text-primary">Your preferences</h1>
     </header>
 
 
-    <main class="p-5">
-        <form>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Example label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput"
-                    placeholder="Example input placeholder">
+    <main class="form-container">
+        <form class="m-4 mt-1" onsubmit="onGetUser(event)">
+            <div class="input-color form-group">
+                <label for="color-input">Choose your favorite color</label>
+                <input type="color" class="form-control" name="color">
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Another label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2"
-                    placeholder="Another input placeholder">
+            <div class="input-birtday form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <label for="color-input">Choose your birthday date</label>
+                        <input type="date" class="form-control" name="b-date">
+                    </div>
+                    <div class="col">
+                        <label for="color-input">Choose your birthday time</label>
+                        <input type="time" class="form-control" name="b-time">
+                    </div>
+                </div>
+            </div>
+            <div class="input-email form-group">
+                <label for="color-input">Enter your E-mail</label>
+                <!-- <input type="email" class="form-control" name="email" placeholder="mail@mail.com" required> --> 
+            </div>
+            <div class="input-age form-group">
+                <label for="color-input">Choose your age</label>
+                <input onchange="showAge(this.value)" type="range" class="form-control" name="age" min="18" max="120"
+                    value="30">
+                <span id="sAge">30</span>
+            </div>
+            <div class="btn-submit form-group">
+                <button type="submit" class="btn btn-primary mb-2" name="submit">Confirm</button>
             </div>
         </form>
     </main>
@@ -62,6 +81,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
+    <!-- scripts -->
+    <script src="../js/util-service.js"></script>
+    <script src="../js/storage-service.js"></script>
+    <script src="../js/user-pref-service.js"></script>
+    <script src="../js/place-servise.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
